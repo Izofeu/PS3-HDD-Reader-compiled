@@ -1105,9 +1105,9 @@ s32 fat_copy_data(ps3_context *ctx, u64 storage, struct fat_bs *fat_fs, struct f
 			dirdest = strdup(newdest);
 		}
 		else {
-			if(mkdir(newdest, 0777) == -1) {
+			if(mkdir(newdest) == -1) {
 				dirdest = valid_filename(newdest, 0);
-				if(mkdir(dirdest,0777) == -1) {
+				if(mkdir(dirdest) == -1) {
 					free(dirdest);
 					return -1;
 				}
