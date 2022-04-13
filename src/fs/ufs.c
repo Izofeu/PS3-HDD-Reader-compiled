@@ -617,9 +617,9 @@ s32 ufs_copy_data(ps3_context *ctx, struct fs *ufs2, ufs_inop root_ino, ufs_inop
 			dirdest = strdup(newdest);
 		}
 		else{
-			if(mkdir(newdest, 0777) == -1){
+			if(mkdir(newdest) == -1){
 				dirdest = valid_filename(newdest, 0);
-				if(mkdir(dirdest,0777) == -1){
+				if(mkdir(dirdest) == -1){
 					free(dirdest);
 					return -1;
 				}
